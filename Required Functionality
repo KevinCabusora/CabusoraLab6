@@ -3,8 +3,8 @@
 
 #define move	1000000
 #define delay	3000000
-#define smTurn	0025000
-#define lgTurn	0500000
+#define smTurn	0500000
+#define lgTurn	0750000
 
 void main(void)
 {
