@@ -73,7 +73,7 @@ WDTCTL = WDTPW|WDTHOLD;                 // stop the watchdog timer
 void moveForward(){
 
 	P2OUT |= BIT0;
-	P2OUT |= BIT2;
+	P2OUT |= BIT1;
 	TA1CCTL1 = OUTMOD_7;
 
 	P2OUT |= BIT5;
@@ -84,7 +84,7 @@ void moveForward(){
 void moveBackward(){
 
 	P2OUT |= BIT0;
-	P2OUT &= ~BIT2;
+	P2OUT &= ~BIT1;
 	TA1CCTL1 = OUTMOD_3;
 
 	P2OUT |= BIT5;
@@ -101,7 +101,7 @@ void stopMove(){
 void moveLeft(){
 
 	P2OUT |= BIT0;		// EN
-	P2OUT &= ~BIT2;		// Reverse
+	P2OUT &= ~BIT1;		// Reverse
 	TA1CCTL1 = OUTMOD_3;					// set TACCTL1 to Reset / Set mode
 
 		// right motor
@@ -113,7 +113,7 @@ void moveLeft(){
 void moveRight(){
 
 	P2OUT |= BIT0;
-	P2OUT |= BIT2;
+	P2OUT |= BIT1;
 	TA1CCTL1 = OUTMOD_7;
 
 	P2OUT |= BIT5;
