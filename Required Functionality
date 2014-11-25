@@ -16,9 +16,9 @@ WDTCTL = WDTPW|WDTHOLD;                 // stop the watchdog timer
 
     // Left Motor Pins
     P2DIR |= BIT0;	// 1,2EN as OUT
-   	P2DIR |= BIT1;  // Left motor direction
-   	P2DIR |= BIT2;							// P2.2 is associated with TA1CCR1
-   	P2SEL |= BIT2;							// P2.2 is associated with TA1CCTL1
+   	P2DIR |= BIT2;  // Left motor direction
+   	P2DIR |= BIT1;							// P2.2 is associated with TA1CCR1
+   	P2SEL |= BIT1;							// P2.2 is associated with TA1CCTL1
 
    	// Right Motor Pins
    	P2DIR |= BIT5;  // 3,4EN as OUT
@@ -77,18 +77,18 @@ void moveForward(){
 	TA1CCTL1 = OUTMOD_7;
 
 	P2OUT |= BIT5;
-	P2OUT &= ~BIT4;
+	P2OUT &= ~BIT3;
 	TA1CCTL2 = OUTMOD_3;
 }
 
 void moveBackward(){
 
 	P2OUT |= BIT0;
-	P2OUT &= ~BIT2;
+	P2OUT &= ~BIT3;
 	TA1CCTL1 = OUTMOD_3;
 
 	P2OUT |= BIT5;
-	P2OUT |= BIT4;
+	P2OUT |= BIT3;
 	TA1CCTL2 = OUTMOD_7;
 }
 
@@ -106,7 +106,7 @@ void moveLeft(){
 
 		// right motor
 	P2OUT |= BIT5;		// EN
-	P2OUT &= ~BIT4;		// Forward
+	P2OUT &= ~BIT3;		// Forward
 	TA1CCTL2 = OUTMOD_3;
 }
 
@@ -117,6 +117,6 @@ void moveRight(){
 	TA1CCTL1 = OUTMOD_7;
 
 	P2OUT |= BIT5;
-	P2OUT |= BIT4;
+	P2OUT |= BIT3;
 	TA1CCTL2 = OUTMOD_7;
 }
