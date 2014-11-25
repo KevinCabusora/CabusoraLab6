@@ -24,3 +24,6 @@ Consider what additional hardware you'll need (regulator, motor driver chip, dec
 Consider the interface you'll want to create to your motors. Do you want to move each motor invidiually (moveLeftMotorForward())? Or do you want to move them together?
 - I would probably move motors by side.  This would then allow for a "tank-like" movement, where in order to turn the robot would go at different speeds on both sides, or go forwards on one side and backwards the other.
 - Paradoxically, to go forward I would program the motors for one to go in one direction and one to go in another.  This is because the motors move in default in one direction (say, clockwise) and letting them run in the same direction leads to a spin.  Therefore I will let them move in different directions.
+
+#Required Functionality
+https://www.youtube.com/watch?v=rJQJGmCc3G8
