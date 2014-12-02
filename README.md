@@ -31,6 +31,8 @@ To implement my actual robot, I made changes to my initial decisions in the prel
 
 I would use three wires per motor: an enable, direction control, and PWM.  The connections I used are shown below in the diagram.
 
+![Here's the diagram](https://github.com/KevinCabusora/CabusoraLab6/blob/master/Connections.JPG)
+
 ## Required Functionality Design
 
 To begin with, I based my code off of Dr. Coulston's provided code on his website.  However, I made some slight modifications to account for my pin assignments.
