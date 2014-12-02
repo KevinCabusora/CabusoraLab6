@@ -33,6 +33,10 @@ I would use three wires per motor: an enable, direction control, and PWM.  The c
 
 ![Here's the diagram](https://github.com/KevinCabusora/CabusoraLab6/blob/master/Connections.JPG)
 
+And they are shown below in real-life form:
+
+![Taken by my iphone](https://github.com/KevinCabusora/CabusoraLab6/blob/master/Actual%20Robot.jpg)
+
 ## Required Functionality Design
 
 To begin with, I based my code off of Dr. Coulston's provided code on his website.  However, I made some slight modifications to account for my pin assignments.
@@ -117,5 +121,28 @@ while(1){
     }// end while
 ```
 
-#Required Functionality Demonstration
+I then input my code for the particular movements.  I didn't want to put the whole thing so I only put my forwards command here.
+
+```
+void moveForward(){
+
+	P2OUT |= BIT0; // left motor
+	P2OUT |= BIT1;
+	TA1CCTL1 = OUTMOD_7;
+
+	P2OUT |= BIT5; // right motor
+	P2OUT &= ~BIT3;
+	TA1CCTL2 = OUTMOD_3;
+}
+```
+
+#Required Functionality Demonstration/Testing
 https://www.youtube.com/watch?v=rJQJGmCc3G8
+
+The robot was successfully tested and demonstrated on 24 November 2014 for required functionality.
+
+#Debugging
+Most of the problems had to do with wiring.  For example, only one wheel would be working accordingly to the other commands, but the other would only move forwards and then do nothing for which it would reverse.  I realized this had to do with switching my motor red and black pins.  My robot would also overturn, which had to do with how I set my turn and pause times.  Therefore, I refined them to be less so that I would turn more precisely.
+
+#Documentation
+C2C Sean Bapty suggested constant times for me to start with for my turn, pause and move times.  C2C Alex Leaf worked with me in testing the logic analyzer on my robot. Dr. Coulston helped me understand how to apply the diagrams on the board to my robot. C2C Kyle Jonas demonstrated to me his 3-wire system which helped me formulate how I hooked up my hardware, as well as him helping with filming my robot demonstration.
